@@ -1,9 +1,8 @@
 <?php
 
-require_once __DIR__ . '/Position.php';
 require_once __DIR__ . '/Map.php';
 
-$map = new Map($mapData = [
+$map = new Map([
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,0,0,0,0,0,2,0,0],
     [0,0,1,0,0,0,0,0,0,0],
@@ -16,13 +15,13 @@ $map = new Map($mapData = [
     [0,0,0,0,0,0,0,0,0,0]
 ]);
 
-$queue = [$map->start];
 $map->mark($map->start); // mark position so we won't add it to queue next time
+$queue = [$map->start];
 $current = array_shift($queue);
 
 while (!$map->isEnd($current)) {
     foreach ($map->getRoadsNearBy($current) as $position) {
-        // if the position is not marked then we should add to queue
+        // if the position is not marked then we add to queue
         if (!$map->hasMark($position)) {
             $map->mark($position);
             $queue[] = $position;
