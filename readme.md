@@ -33,8 +33,8 @@ Because the edge is unweighted, it's fast enough (`O(E+V)`)to use BFS.
 ## Setup
 
 1. `php -S localhost:8080`
-2. Visit [http://localhost:8080]()
+2. Visit [http://localhost:8080](http://localhost:8080)
 
 ## Screenshot
 
-[[https://github.com/shavenking/shortest-path/blob/master/img/demo.png|alt=demo]]
+![demo.png](demo.png)
